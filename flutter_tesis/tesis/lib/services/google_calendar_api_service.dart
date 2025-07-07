@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/event_model.dart';
 
 class GoogleCalendarApiService {
-  static const String baseUrl = 'http://localhost:8001/api';
+  static const String baseUrl = 'https://tesis-calendario.onrender.com/api';
   
   // Verificar estado de autenticación con Google Calendar
   static Future<bool> isAuthenticated() async {
@@ -210,7 +210,7 @@ class GoogleCalendarApiService {
   static Future<bool> isServerRunning() async {
     try {
       final response = await http.get(
-        Uri.parse('http://localhost:8001/health'),
+        Uri.parse('https://tesis-calendario.onrender.com/health'),
         headers: {'Content-Type': 'application/json'},
       );
       return response.statusCode == 200;
