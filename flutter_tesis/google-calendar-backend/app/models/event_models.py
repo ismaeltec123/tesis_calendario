@@ -27,7 +27,7 @@ class EventResponse(EventBase):
     firebase_id: Optional[str] = None
     
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 class SyncResponse(BaseModel):
     success: bool
